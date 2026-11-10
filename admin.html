@@ -43,9 +43,37 @@ function say(m,bad){st.textContent=m;st.className=bad?'bad':''}
 function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;')}
 function u2b(s){return btoa(unescape(encodeURIComponent(s)))}
 function b2u(b){return decodeURIComponent(escape(atob(b.replace(/\n/g,''))))}
-function slug(s){return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')||'cat'}
-async function gh(p,m,b){var r=await fetch('https://api.github.com/repos/'+C.o+'/'+C.r+'/'+p,{method:m||'GET',headers:{Authorization:'Bearer '+C.t,Accept:'application/vnd.github+json','Content-Type':'application/json'},body:b?JSON.stringify(b):undefined});
-var j=await r.json().catch(function(){return{}});if(!r.ok){var e=new Error(j.message||('HTTP '+r.status));e.status=r.status;throw e}return j}
+function slug(s){return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g, '')||'cat'}
+
+async function gh(p, m, b) {
+    try {
+        var r = await fetch('https://api.github.com/repos/' + C.o + '/' + C.r + '/' + p, {
+            method: m || 'GET',
+            headers: {
+                Authorization: 'Bearer ' + C.t,
+                Accept: 'application/vnd.github+json',
+                'Content-Type': 'application/json'
+            },
+            body: b ? JSON.stringify(b) : undefined
+        });
+        
+        var text = await r.text();
+        var j = text ? JSON.parse(text) : {};
+        
+        if (!r.ok) {
+            var e = new Error(j.message || ('HTTP ' + r.status));
+            e.status = r.status;
+            throw e;
+        }
+        return j;
+    } catch (err) {
+        if (err.message === 'Failed to fetch') {
+            throw new Error('Failed to fetch. Check internet connection or CORS/Adblockers.');
+        }
+        throw err;
+    }
+}
+
 function pic(file,max,alpha,cb){var r=new FileReader();r.onload=function(){var i=new Image();i.onload=function(){var s=Math.min(1,max/i.width),c=document.createElement('canvas');c.width=Math.round(i.width*s);c.height=Math.round(i.height*s);c.getContext('2d').drawImage(i,0,0,c.width,c.height);
 cb(alpha&&/png|webp|gif/.test(file.type)?c.toDataURL('image/png'):c.toDataURL('image/jpeg',.85))};i.src=r.result};r.readAsDataURL(file)}
 function addImg(file,dir,alpha,cb){pic(file,alpha?1400:1400,alpha,function(d){var p=dir+'/'+Date.now()+'-'+Math.random().toString(36).slice(2,6)+(d.indexOf('image/png')>0?'.png':'.jpg');pend.push({p:p,b:d.split(',')[1]});PV[p]=d;cb(p)})}
@@ -82,6 +110,7 @@ else if(a=='ac'){var nm=$('#nc').value.trim();if(!nm)return;S.cats.push({id:slug
 else if(a=='dc'){if(!confirm('Delete this category and all its files?'))return;S.cats[c].items.forEach(function(x){rm(x.i)});S.cats.splice(c,1);draw()}
 else if(a=='up'&&c>0){S.cats.splice(c-1,0,S.cats.splice(c,1)[0]);draw()}else if(a=='dn'&&c<S.cats.length-1){S.cats.splice(c+1,0,S.cats.splice(c,1)[0]);draw()}
 else if(a=='di'){rm(S.cats[c].items[i].i);S.cats[c].items.splice(i,1);draw()}
+else if(a=='avkhov'){S.cats[c].items.push({t:'New video',u:'https://youtu.be/',i:''});draw()}
 else if(a=='av'){S.cats[c].items.push({t:'New video',u:'https://youtu.be/',i:''});draw()}});
 $('#sv').addEventListener('click',save);draw();if(C.t&&C.o&&C.r)conn();
 </script></body></html>
