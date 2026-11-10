@@ -1,0 +1,97 @@
+{
+ "f": {
+  "tag": "Video Editor · Graphic Designer",
+  "name": "Shahriar Shafin",
+  "intro": "I’m Shafin, a BSc student in Electrical and Electronics Engineering. Alongside my academic journey, I have a strong passion for video editing and graphic designing. I enjoy turning creative ideas into visually engaging content, crafting compelling videos, and designing graphics that communicate stories with impact.",
+  "u_deg": "BSc in Electrical & Electronics Engineering",
+  "u_name": "World University of Bangladesh",
+  "u_desc": "Undergraduate student. Circuits, systems and problem solving, which I bring into my creative work too.",
+  "d_deg": "Diploma in Engineering",
+  "d_name": "Kishoreganj Polytechnic Institute",
+  "d_desc": "Department of Electronics",
+  "s1": "Video Editing",
+  "s1d": "Clean cuts, pacing and polish for your videos.",
+  "s2": "Thumbnail Design",
+  "s2d": "Eye-catching thumbnails that get clicks.",
+  "s3": "Graphic Design",
+  "s3d": "Visuals and graphics for your brand or channel.",
+  "email": "shafinoo944@gmail.com",
+  "wa": "8801609229599",
+  "ig": "https://www.instagram.com/shafinvisuals/",
+  "fb": "https://www.facebook.com/shafin50x",
+  "be": "https://www.behance.net/shafin99",
+  "gh": "https://github.com/shafinverse",
+  "li": "https://www.linkedin.com/in/s-m-shahriar-parvez-shafin-100171329/",
+  "lin": "S M Shahriar Parvez Shafin"
+ },
+ "assets": {
+  "profile": "assets/profile.webp",
+  "uniLogo": "assets/uni-logo.png",
+  "dipLogo": "assets/diploma-logo.png"
+ },
+ "cats": [
+  {
+   "id": "thumbnail-design",
+   "name": "Thumbnail Design",
+   "type": "image",
+   "d": "YouTube thumbnail designs",
+   "items": [
+    {
+     "i": "uploads/thumbnail-design/01.jpg"
+    },
+    {
+     "i": "uploads/thumbnail-design/02.jpg"
+    },
+    {
+     "i": "uploads/thumbnail-design/03.jpg"
+    },
+    {
+     "i": "uploads/thumbnail-design/04.jpg"
+    },
+    {
+     "i": "uploads/thumbnail-design/05.jpg"
+    },
+    {
+     "i": "uploads/thumbnail-design/06.jpg"
+    },
+    {
+     "i": "uploads/thumbnail-design/07.jpg"
+    },
+    {
+     "i": "uploads/thumbnail-design/08.jpg"
+    },
+    {
+     "i": "uploads/thumbnail-design/09.jpg"
+    }
+   ]
+  },
+  {
+   "id": "video-edits",
+   "name": "Video Edits",
+   "type": "video",
+   "d": "YouTube video edits",
+   "items": [
+    {
+     "t": "Vijay Thalapathy",
+     "u": "https://youtu.be/KQYPSQH_ndU",
+     "i": "uploads/video-edits/01.jpg"
+    },
+    {
+     "t": "Premalu Edit",
+     "u": "https://youtu.be/XZ2OeD9cWT8",
+     "i": "uploads/video-edits/02.jpg"
+    },
+    {
+     "t": "Inside Bangladesh Military Museum",
+     "u": "https://youtu.be/N2tZJJ19QVg",
+     "i": "uploads/video-edits/03.jpg"
+    },
+    {
+     "t": "DDI Expo",
+     "u": "https://youtu.be/A4VhLUkZcNY",
+     "i": "uploads/video-edits/04.jpg"
+    }
+   ]
+  }
+ ]
+}
