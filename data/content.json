@@ -1,34 +1,122 @@
 {
- "f": {
+ "v": 2,
+ "site": {
+  "title": "Shahriar Shafin | Portfolio",
+  "brand": "shafin.visuals",
+  "accent": "#ff7a1a",
+  "footer": "© 2026 Shahriar Shafin",
+  "note": "EEE · Video · Design",
+  "nav": {
+   "home": "Home",
+   "work": "Work",
+   "education": "Education",
+   "service": "Service",
+   "contact": "Contact"
+  },
+  "tl": [
+   "EEE",
+   "VIDEO",
+   "DESIGN"
+  ]
+ },
+ "hero": {
   "tag": "Video Editor · Graphic Designer",
   "name": "Shahriar Shafin",
   "intro": "I’m Shafin, a BSc student in Electrical and Electronics Engineering. Alongside my academic journey, I have a strong passion for video editing and graphic designing. I enjoy turning creative ideas into visually engaging content, crafting compelling videos, and designing graphics that communicate stories with impact.",
-  "u_deg": "BSc in Electrical & Electronics Engineering",
-  "u_name": "World University of Bangladesh",
-  "u_desc": "Undergraduate student. Circuits, systems and problem solving, which I bring into my creative work too.",
-  "d_deg": "Diploma in Engineering",
-  "d_name": "Kishoreganj Polytechnic Institute",
-  "d_desc": "Department of Electronics",
-  "s1": "Video Editing",
-  "s1d": "Clean cuts, pacing and polish for your videos.",
-  "s2": "Thumbnail Design",
-  "s2d": "Eye-catching thumbnails that get clicks.",
-  "s3": "Graphic Design",
-  "s3d": "Visuals and graphics for your brand or channel.",
-  "email": "shafinoo944@gmail.com",
-  "wa": "8801609229599",
-  "ig": "https://www.instagram.com/shafinvisuals/",
-  "fb": "https://www.facebook.com/shafin50x",
-  "be": "https://www.behance.net/shafin99",
-  "gh": "https://github.com/shafinverse",
-  "li": "https://www.linkedin.com/in/s-m-shahriar-parvez-shafin-100171329/",
-  "lin": "S M Shahriar Parvez Shafin"
+  "btn1": "See my work",
+  "btn2": "Start a conversation"
+ },
+ "sec": {
+  "work": {
+   "tag": "Work",
+   "h": "Selected *projects*"
+  },
+  "education": {
+   "tag": "Education"
+  },
+  "service": {
+   "tag": "Service",
+   "h": "What I *do*"
+  },
+  "contact": {
+   "tag": "Contact",
+   "h": "Let’s *work together*"
+  }
  },
  "assets": {
-  "profile": "assets/profile.webp",
-  "uniLogo": "assets/uni-logo.png",
-  "dipLogo": "assets/diploma-logo.png"
+  "profile": "assets/profile.webp"
  },
+ "edu": [
+  {
+   "h": "*University*",
+   "logo": "assets/uni-logo.png",
+   "deg": "BSc in Electrical & Electronics Engineering",
+   "inst": "World University of Bangladesh",
+   "desc": "Undergraduate student. Circuits, systems and problem solving, which I bring into my creative work too."
+  },
+  {
+   "h": "*Diploma*",
+   "logo": "assets/diploma-logo.png",
+   "deg": "Diploma in Engineering",
+   "inst": "Kishoreganj Polytechnic Institute",
+   "desc": "Department of Electronics"
+  }
+ ],
+ "svc": [
+  {
+   "icon": "film",
+   "t": "Video Editing",
+   "d": "Clean cuts, pacing and polish for your videos."
+  },
+  {
+   "icon": "image",
+   "t": "Thumbnail Design",
+   "d": "Eye-catching thumbnails that get clicks."
+  },
+  {
+   "icon": "pen",
+   "t": "Graphic Design",
+   "d": "Visuals and graphics for your brand or channel."
+  }
+ ],
+ "boxes": [
+  {
+   "p": "email",
+   "t": "shafinoo944@gmail.com",
+   "u": "shafinoo944@gmail.com"
+  },
+  {
+   "p": "linkedin",
+   "t": "S M Shahriar Parvez Shafin",
+   "u": "https://www.linkedin.com/in/s-m-shahriar-parvez-shafin-100171329/"
+  }
+ ],
+ "links": [
+  {
+   "p": "whatsapp",
+   "u": "8801609229599"
+  },
+  {
+   "p": "instagram",
+   "u": "https://www.instagram.com/shafinvisuals/"
+  },
+  {
+   "p": "facebook",
+   "u": "https://www.facebook.com/shafin50x"
+  },
+  {
+   "p": "behance",
+   "u": "https://www.behance.net/shafin99"
+  },
+  {
+   "p": "youtube",
+   "u": "https://www.youtube.com/@SHAFIN50"
+  },
+  {
+   "p": "github",
+   "u": "https://github.com/shafinverse"
+  }
+ ],
  "cats": [
   {
    "id": "thumbnail-design",
