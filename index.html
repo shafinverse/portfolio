@@ -304,6 +304,8 @@ body.go .hero-l>.lead{animation-delay:.5s}
 body.go .hero-l>.btns{animation-delay:.7s}
 body.go .hero-r{animation-delay:.6s}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}#intro{display:none}.hero-l>*,.hero-r{opacity:1!important;transform:none!important}}
+#boxes{display:flex;flex-direction:column;align-items:center}
+#contact .socials{justify-content:center}
 </style>
 </head>
 <body __processed_391e5518-9af9-4f13-ad23-e9eea8225dfe__="true" __processed_5fddbb6a-8976-4d76-ad6a-9c238e4ea1e6__="true">
@@ -313,7 +315,7 @@ body.go .hero-r{animation-delay:.6s}
 <button id="theme" aria-label="Toggle light or dark theme">☀</button>
 
 <aside>
-  <div class="brand"><div class="logo"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffa957"></stop><stop offset="1" stop-color="#c2410c"></stop></linearGradient></defs><rect width="40" height="40" rx="12" fill="url(#lg)"></rect><path d="M11 17v-4a2 2 0 0 1 2-2h4M29 17v-4a2 2 0 0 0-2-2h-4M11 23v4a2 2 0 0 0 2 2h4M29 23v4a2 2 0 0 1-2 2h-4" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"></path><path d="M17.5 15.5v9l7.5-4.5z" fill="#fff"></path></svg></div><span class="mono">shafin<em>.</em>visuals</span></div>
+  <div class="brand"><div class="logo"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffa957"></stop><stop offset="1" stop-color="#c2410c"></stop></linearGradient></defs><rect width="40" height="40" rx="12" fill="url(#lg)"></rect><path d="M11 17v-4a2 2 0 0 1 2-2h4M29 17v-4a2 2 0 0 0-2-2h-4M11 23v4a2 2 0 0 0 2 2h4M29 23v4a2 2 0 0 1-2 2h-4" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"></path><path d="M17.5 15.5v9l7.5-4.5z" fill="#fff"></path></svg></div><span class="mono" id="brandT">shafin<em>.</em>visuals</span></div>
   <nav id="nav">
     <a href="#home" class="active">Home</a>
     <a href="#work">Work</a>
@@ -369,83 +371,144 @@ body.go .hero-r{animation-delay:.6s}
 
 <section id="education">
   <div class="tag mono rv">Education</div>
-  <h2 class="rv"><span>University</span></h2>
-  <div class="edu rv">
-    <img id="imgUni" src="assets/uni-logo.png" alt="World University of Bangladesh logo">
-    <div>
-      <h3>BSc in Electrical &amp; Electronics Engineering</h3>
-      <div class="uni mono">World University of Bangladesh</div>
-      <p>Undergraduate student. Circuits, systems and problem solving, which I bring into my creative work too.</p>
-    </div>
-  </div>
-<h2 class="rv" style="margin-top:64px"><span>Diploma</span></h2>
-  <div class="edu rv">
-    <img id="imgDip" src="assets/diploma-logo.png" alt="Kishoreganj Polytechnic Institute logo">
-    <div>
-      <h3>Diploma in Engineering</h3>
-      <div class="uni mono">Kishoreganj Polytechnic Institute</div>
-      <p>Department of Electronics</p>
-    </div>
-</div></section>
+  <div id="eduList"></div>
+</section>
 
 <section id="service">
   <div class="tag mono rv">Service</div>
   <h2 class="rv">What I <span>do</span></h2>
-  <div class="grid">
-    <div class="card rv"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M7 5v14M17 5v14M3 9h4M3 15h4M17 9h4M17 15h4"></path></svg></div><h3>Video Editing</h3><p>Clean cuts, pacing and polish for your videos.</p></div>
-    <div class="card rv"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><circle cx="9" cy="10" r="1.6"></circle><path d="M21 16l-5-5-9 9"></path></svg></div><h3>Thumbnail Design</h3><p>Eye-catching thumbnails that get clicks.</p></div>
-    <div class="card rv"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19 7-7 3 3-7 7-3-3z"></path><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="m2 2 7.6 7.6"></path><circle cx="11" cy="11" r="2"></circle></svg></div><h3>Graphic Design</h3><p>Visuals and graphics for your brand or channel.</p></div>
-  </div>
+  <div class="grid" id="svcGrid"></div>
 </section>
 
 <section id="contact">
   <div class="tag mono rv">Contact</div>
   <h2 class="rv">Let’s <span>work together</span></h2>
-  <a class="mailbox rv" href="mailto:shafinoo944@gmail.com" target="_blank" rel="noopener" aria-label="Send an email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg><span class="mono">shafinoo944@gmail.com</span></a>
-  <a class="mailbox rv" href="https://www.linkedin.com/in/s-m-shahriar-parvez-shafin-100171329/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 11v5"></path><path d="M8 8v.01"></path><path d="M12 16v-5"></path><path d="M16 16v-3a2 2 0 0 0-4 0"></path><path d="M3 7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"></path></svg><span class="mono">S M Shahriar Parvez Shafin</span></a>
-  <div class="socials rv">
-    <a href="https://wa.me/8801609229599" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M3 21l1.65-4.9A8.5 8.5 0 1 1 8 19.4L3 21z"></path><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1.2-1.4-1.9-1-.9.7a3.5 3.5 0 0 1-1.7-1.7l.7-.9-1-1.9L9 9.5z"></path></svg><span class="mono">WhatsApp</span></a>
-    <a href="https://www.instagram.com/shafinvisuals/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"></circle></svg><span class="mono">Instagram</span></a>
-    <a href="https://www.facebook.com/shafin50x" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg><span class="mono">Facebook</span></a>
-    <a href="https://www.behance.net/shafin99" target="_blank" rel="noopener" aria-label="Behance"><svg viewBox="0 0 24 24"><path d="M3 18v-12h4.5a3 3 0 0 1 0 6a3 3 0 0 1 0 6h-4.5"></path><path d="M3 12h4.5"></path><path d="M14 13h7a3.5 3.5 0 0 0-7 0v2a3.5 3.5 0 0 0 6.64 1"></path><path d="M16 6h3"></path></svg><span class="mono">Behance</span></a>
-    <a href="https://github.com/shafinverse" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg><span class="mono">GitHub</span></a>
-  </div>
+  <div id="boxes"></div>
+  <div class="socials" id="socials"></div>
 </section>
 </main>
 <div id="cat" class="fo" aria-hidden="true"><div class="fo-box"><div class="fo-h"><h3></h3><button class="fo-x" aria-label="Close">&times;</button></div><div class="gallery"></div><div class="vgrid"></div></div></div>
-<footer class="mono">© 2026 Shahriar Shafin</footer>
+<footer class="mono" id="foot">© 2026 Shahriar Shafin</footer>
 
 <script type="application/json" id="seed">{
- "f": {
+ "v": 2,
+ "site": {
+  "title": "Shahriar Shafin | Portfolio",
+  "brand": "shafin.visuals",
+  "accent": "#ff7a1a",
+  "footer": "© 2026 Shahriar Shafin",
+  "note": "EEE · Video · Design",
+  "nav": {
+   "home": "Home",
+   "work": "Work",
+   "education": "Education",
+   "service": "Service",
+   "contact": "Contact"
+  },
+  "tl": [
+   "EEE",
+   "VIDEO",
+   "DESIGN"
+  ]
+ },
+ "hero": {
   "tag": "Video Editor · Graphic Designer",
   "name": "Shahriar Shafin",
   "intro": "I’m Shafin, a BSc student in Electrical and Electronics Engineering. Alongside my academic journey, I have a strong passion for video editing and graphic designing. I enjoy turning creative ideas into visually engaging content, crafting compelling videos, and designing graphics that communicate stories with impact.",
-  "u_deg": "BSc in Electrical & Electronics Engineering",
-  "u_name": "World University of Bangladesh",
-  "u_desc": "Undergraduate student. Circuits, systems and problem solving, which I bring into my creative work too.",
-  "d_deg": "Diploma in Engineering",
-  "d_name": "Kishoreganj Polytechnic Institute",
-  "d_desc": "Department of Electronics",
-  "s1": "Video Editing",
-  "s1d": "Clean cuts, pacing and polish for your videos.",
-  "s2": "Thumbnail Design",
-  "s2d": "Eye-catching thumbnails that get clicks.",
-  "s3": "Graphic Design",
-  "s3d": "Visuals and graphics for your brand or channel.",
-  "email": "shafinoo944@gmail.com",
-  "wa": "8801609229599",
-  "ig": "https://www.instagram.com/shafinvisuals/",
-  "fb": "https://www.facebook.com/shafin50x",
-  "be": "https://www.behance.net/shafin99",
-  "gh": "https://github.com/shafinverse",
-  "li": "https://www.linkedin.com/in/s-m-shahriar-parvez-shafin-100171329/",
-  "lin": "S M Shahriar Parvez Shafin"
+  "btn1": "See my work",
+  "btn2": "Start a conversation"
+ },
+ "sec": {
+  "work": {
+   "tag": "Work",
+   "h": "Selected *projects*"
+  },
+  "education": {
+   "tag": "Education"
+  },
+  "service": {
+   "tag": "Service",
+   "h": "What I *do*"
+  },
+  "contact": {
+   "tag": "Contact",
+   "h": "Let’s *work together*"
+  }
  },
  "assets": {
-  "profile": "assets/profile.webp",
-  "uniLogo": "assets/uni-logo.png",
-  "dipLogo": "assets/diploma-logo.png"
+  "profile": "assets/profile.webp"
  },
+ "edu": [
+  {
+   "h": "*University*",
+   "logo": "assets/uni-logo.png",
+   "deg": "BSc in Electrical & Electronics Engineering",
+   "inst": "World University of Bangladesh",
+   "desc": "Undergraduate student. Circuits, systems and problem solving, which I bring into my creative work too."
+  },
+  {
+   "h": "*Diploma*",
+   "logo": "assets/diploma-logo.png",
+   "deg": "Diploma in Engineering",
+   "inst": "Kishoreganj Polytechnic Institute",
+   "desc": "Department of Electronics"
+  }
+ ],
+ "svc": [
+  {
+   "icon": "film",
+   "t": "Video Editing",
+   "d": "Clean cuts, pacing and polish for your videos."
+  },
+  {
+   "icon": "image",
+   "t": "Thumbnail Design",
+   "d": "Eye-catching thumbnails that get clicks."
+  },
+  {
+   "icon": "pen",
+   "t": "Graphic Design",
+   "d": "Visuals and graphics for your brand or channel."
+  }
+ ],
+ "boxes": [
+  {
+   "p": "email",
+   "t": "shafinoo944@gmail.com",
+   "u": "shafinoo944@gmail.com"
+  },
+  {
+   "p": "linkedin",
+   "t": "S M Shahriar Parvez Shafin",
+   "u": "https://www.linkedin.com/in/s-m-shahriar-parvez-shafin-100171329/"
+  }
+ ],
+ "links": [
+  {
+   "p": "whatsapp",
+   "u": "8801609229599"
+  },
+  {
+   "p": "instagram",
+   "u": "https://www.instagram.com/shafinvisuals/"
+  },
+  {
+   "p": "facebook",
+   "u": "https://www.facebook.com/shafin50x"
+  },
+  {
+   "p": "behance",
+   "u": "https://www.behance.net/shafin99"
+  },
+  {
+   "p": "youtube",
+   "u": ""
+  },
+  {
+   "p": "github",
+   "u": "https://github.com/shafinverse"
+  }
+ ],
  "cats": [
   {
    "id": "thumbnail-design",
@@ -511,7 +574,8 @@ body.go .hero-r{animation-delay:.6s}
    ]
   }
  ]
-}</script>
+}
+</script>
 <script>
 
 
@@ -542,38 +606,65 @@ function tick(){var t=(performance.now()-t0)/1000,f=Math.floor(t*24)%24,sec=Math
 tick();
 })();
 
-(function(){var a=document.querySelector('.mailbox');if(!a)return;var t=document.createElement('div');t.id='toast';t.className='mono';document.body.appendChild(t);var timer,m=(a.getAttribute('href')||'').replace('mailto:','');
-function show(x){t.textContent=x;t.classList.add('on');clearTimeout(timer);timer=setTimeout(function(){t.classList.remove('on')},2400)}
-function legacy(){var x=document.createElement('textarea');x.value=m;x.setAttribute('readonly','');x.style.cssText='position:fixed;opacity:0;top:0';document.body.appendChild(x);x.select();var ok=false;try{ok=document.execCommand('copy')}catch(e){}document.body.removeChild(x);return ok}
-a.addEventListener('click',function(){if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(m).then(function(){show('Email copied to clipboard')},function(){show(legacy()?'Email copied to clipboard':m)})}else{show(legacy()?'Email copied to clipboard':m)}})})();
+
+
+var DEF={v:2,site:{title:'Shahriar Shafin | Portfolio',brand:'shafin.visuals',accent:'#ff7a1a',footer:'\u00a9 2026 Shahriar Shafin',note:'EEE \u00b7 Video \u00b7 Design',nav:{home:'Home',work:'Work',education:'Education',service:'Service',contact:'Contact'},tl:['EEE','VIDEO','DESIGN']},
+hero:{tag:'Video Editor \u00b7 Graphic Designer',name:'Shahriar Shafin',intro:'',btn1:'See my work',btn2:'Start a conversation'},
+sec:{work:{tag:'Work',h:'Selected *projects*'},education:{tag:'Education'},service:{tag:'Service',h:'What I *do*'},contact:{tag:'Contact',h:'Let\u2019s *work together*'}},
+assets:{profile:'assets/profile.webp'},edu:[],svc:[],boxes:[],links:[],cats:[]};
+function clone(o){return JSON.parse(JSON.stringify(o))}
+function merge(a,b){if(b==null)return a;if(typeof a!='object'||a==null||Array.isArray(a)||typeof b!='object'||Array.isArray(b))return b;for(var k in b)a[k]=(k in a)?merge(a[k],b[k]):b[k];return a}
+function migrate(S){S=S||{};if(S.v>=2)return merge(clone(DEF),S);var f=S.f||{},A=S.assets||{},o=clone(DEF);
+o.hero.tag=f.tag||o.hero.tag;o.hero.name=f.name||o.hero.name;o.hero.intro=f.intro||'';
+o.edu=[{h:'*University*',logo:A.uniLogo||'',deg:f.u_deg||'',inst:f.u_name||'',desc:f.u_desc||''},{h:'*Diploma*',logo:A.dipLogo||'',deg:f.d_deg||'',inst:f.d_name||'',desc:f.d_desc||''}];
+o.svc=[{icon:'film',t:f.s1||'',d:f.s1d||''},{icon:'image',t:f.s2||'',d:f.s2d||''},{icon:'pen',t:f.s3||'',d:f.s3d||''}];
+o.boxes=[{p:'email',t:f.email||'',u:f.email||''},{p:'linkedin',t:f.lin||'',u:f.li||''}];
+o.links=[{p:'whatsapp',u:f.wa||''},{p:'instagram',u:f.ig||''},{p:'facebook',u:f.fb||''},{p:'behance',u:f.be||''},{p:'youtube',u:''},{p:'github',u:f.gh||''}];
+o.assets.profile=A.profile||o.assets.profile;o.cats=S.cats||[];return o}
 
 (function(){
-var $=function(s){return document.querySelector(s)},$$=function(s){return [].slice.call(document.querySelectorAll(s))},S={};
-var F=[['tag','Tagline (small text on top)','t','.hero-l .tag',0,'Hero'],['name','Name (big heading)','t','.hero-l h1',0,'Hero'],['intro','Intro paragraph','a','.hero-l .lead',0,'Hero'],
-['u_deg','University: degree','t','#education .edu h3',0,'Education'],['u_name','University: name','t','#education .edu .uni',0,'Education'],['u_desc','University: description','a','#education .edu p',0,'Education'],
-['d_deg','Diploma: degree','t','#education .edu h3',1,'Education'],['d_name','Diploma: institute','t','#education .edu .uni',1,'Education'],['d_desc','Diploma: description','a','#education .edu p',1,'Education'],
-['s1','Service 1: title','t','#service .card h3',0,'Services'],['s1d','Service 1: text','a','#service .card p',0,'Services'],
-['s2','Service 2: title','t','#service .card h3',1,'Services'],['s2d','Service 2: text','a','#service .card p',1,'Services'],
-['s3','Service 3: title','t','#service .card h3',2,'Services'],['s3d','Service 3: text','a','#service .card p',2,'Services'],
-['email','Email address','m','a.mailbox[aria-label="Send an email"]',0,'Contact'],['wa','WhatsApp number (with country code)','w','a[aria-label="WhatsApp"]',0,'Contact'],
-['ig','Instagram link','l','a[aria-label="Instagram"]',0,'Contact'],['fb','Facebook link','l','a[aria-label="Facebook"]',0,'Contact'],['be','Behance link','l','a[aria-label="Behance"]',0,'Contact'],['gh','GitHub link','l','a[aria-label="GitHub"]',0,'Contact'],
-['li','LinkedIn link','l','a.mailbox[aria-label="LinkedIn"]',0,'Contact'],['lin','LinkedIn box text','t','a.mailbox[aria-label="LinkedIn"] span',0,'Contact']];
-function el(f){return $$(f[3])[f[4]]}
-function get(f){var e=el(f);if(!e)return'';var h=e.getAttribute('href')||'';if(f[2]=='l')return h;if(f[2]=='m')return h.replace('mailto:','');if(f[2]=='w')return(h.match(/\d+/)||[''])[0];return e.textContent.trim()}
-function set(f,v){var e=el(f);if(!e)return;var t=f[2];if(t=='l')e.setAttribute('href',v);else if(t=='m'){e.setAttribute('href','mailto:'+v);e.querySelector('span').textContent=v}else if(t=='w')e.setAttribute('href','https://wa.me/'+v.replace(/\D/g,''));else e.textContent=v}
-
+var $=function(s){return document.querySelector(s)},$$=function(s){return [].slice.call(document.querySelectorAll(s))};
+var S=migrate({}),wasLb=false;
+var IC={email:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',linkedin:'<path d="M8 11v5"/><path d="M8 8v.01"/><path d="M12 16v-5"/><path d="M16 16v-3a2 2 0 0 0-4 0"/><path d="M3 7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/>',
+whatsapp:'<path d="M3 21l1.65-4.9A8.5 8.5 0 1 1 8 19.4L3 21z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1.2-1.4-1.9-1-.9.7a3.5 3.5 0 0 1-1.7-1.7l.7-.9-1-1.9L9 9.5z"/>',
+instagram:'<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/>',facebook:'<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>',
+behance:'<path d="M3 18v-12h4.5a3 3 0 0 1 0 6a3 3 0 0 1 0 6h-4.5"/><path d="M3 12h4.5"/><path d="M14 13h7a3.5 3.5 0 0 0-7 0v2a3.5 3.5 0 0 0 6.64 1"/><path d="M16 6h3"/>',
+github:'<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>',
+youtube:'<path d="M2 8a4 4 0 0 1 4-4h12a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4z"/><path d="M10 9l5 3-5 3z"/>',x:'<path d="M4 4l11.7 16H20L8.3 4z"/><path d="M4 20l6.8-6.8M13.2 10.8L20 4"/>',
+tiktok:'<path d="M21 7.9v4a10 10 0 0 1-5-2v4.5a6.5 6.5 0 1 1-8-6.3v4.3a2.5 2.5 0 1 0 4 2V3h4.1A6 6 0 0 0 21 7.9z"/>',telegram:'<path d="M15 10l-4 4 6 6 4-16-18 7 4 2 2 6 3-4"/>',
+website:'<circle cx="12" cy="12" r="9"/><path d="M3.6 9h16.8M3.6 15h16.8M11.5 3a17 17 0 0 0 0 18M12.5 3a17 17 0 0 1 0 18"/>',
+film:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 5v14M17 5v14M3 9h4M3 15h4M17 9h4M17 15h4"/>',image:'<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5-9 9"/>',
+pen:'<path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.6 7.6"/><circle cx="11" cy="11" r="2"/>',
+camera:'<path d="M5 7h1a2 2 0 0 0 2-2 1 1 0 0 1 1-1h6a1 1 0 0 1 1 1 2 2 0 0 0 2 2h1a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2"/><circle cx="12" cy="13" r="3"/>',
+code:'<path d="M7 8l-4 4 4 4M17 8l4 4-4 4M14 4l-4 16"/>',music:'<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>',spark:'<path d="M12 3l2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z"/>'};
+var NM={whatsapp:'WhatsApp',instagram:'Instagram',facebook:'Facebook',behance:'Behance',github:'GitHub',youtube:'YouTube',x:'X',tiktok:'TikTok',telegram:'Telegram',website:'Website',linkedin:'LinkedIn',email:'Email'};
 function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;')}
-try{S=JSON.parse($('#seed').textContent)}catch(e){}
+function hl(s){return esc(s).replace(/\*([^*]+)\*/g,'<span>$1</span>')}
+function svg(k){return '<svg viewBox="0 0 24 24" aria-hidden="true">'+(IC[k]||IC.website)+'</svg>'}
+function href(l){var u=(l.u||'').trim();if(l.p=='email')return 'mailto:'+u;if(l.p=='whatsapp'&&/^[+\d\s()-]+$/.test(u))return 'https://wa.me/'+u.replace(/\D/g,'');return u}
+function mix(h,t,f){var n=parseInt(h.slice(1),16),r=n>>16,g=n>>8&255,b=n&255;function m(c){return Math.round(c+(t-c)*f)}return '#'+((1<<24)+(m(r)<<16)+(m(g)<<8)+m(b)).toString(16).slice(1)}
 var GL='<path d="M7.5 17.2l3.1-3.6 2.2 2.4 1.8-2.1 2.4 3.3z"></path><circle cx="9.3" cy="12.2" r=".9"></circle>',PL='<path d="M10.6 11.4v5.2l4.4-2.6z"></path>';
 function ico(t){return '<svg viewBox="0 0 24 24" width="64" height="64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"></path>'+(t=='video'?PL:GL)+'</svg>'}
 function vc(x){return '<a class="vid'+(x.i?' im':'')+'" href="'+esc(x.u)+'" target="_blank" rel="noopener">'+(x.i?'<img loading="lazy" src="'+esc(x.i)+'" alt="">':'')+'<span class="pl"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><span class="mono">'+esc(x.t)+'</span><em class="mono">Watch on YouTube &#8599;</em></a>'}
-function paint(){
- F.forEach(function(f){if(S.f&&S.f[f[0]]!=null)set(f,S.f[f[0]])});
- var A=S.assets||{};[['imgProfile','profile'],['imgUni','uniLogo'],['imgDip','dipLogo']].forEach(function(p){var e=$('#'+p[0]);if(e&&A[p[1]])e.setAttribute('src',A[p[1]])});
- $('#catGrid').innerHTML=(S.cats||[]).map(function(c,i){return '<div class="card" data-c="'+i+'" role="button" tabindex="0" aria-label="Open '+esc(c.name)+'" style="cursor:pointer"><div class="thumb mono folder">'+ico(c.type)+'</div><h3>'+esc(c.name)+'</h3><p>'+esc(c.d||'')+'</p></div>'}).join('')}
-paint();
-fetch('data/content.json?t='+Date.now()).then(function(r){return r.ok?r.json():Promise.reject()}).then(function(j){S=j;paint()}).catch(function(){});
-var m=$('#cat'),mg=m.querySelector('.gallery'),mv=m.querySelector('.vgrid'),wasLb=false;
+function setT(sel,v){var e=$(sel);if(e)e.textContent=v}
+function paint(){var s=S.site,h=S.hero,a=S.assets;document.title=s.title;
+ var st=$('#accentCss');if(!st){st=document.createElement('style');st.id='accentCss';document.head.appendChild(st)}
+ if(/^#[0-9a-f]{6}$/i.test(s.accent))st.textContent=':root{--accent:'+s.accent+';--accent2:'+mix(s.accent,255,.35)+'}:root[data-theme="light"]{--accent:'+mix(s.accent,0,.3)+';--accent2:'+s.accent+'}';
+ $('#brandT').innerHTML=esc(s.brand).replace('.','<em>.</em>');setT('.side-foot .mono',s.note);
+ $$('#nav a').forEach(function(x){x.textContent=s.nav[x.getAttribute('href').slice(1)]||x.textContent});
+ setT('.hero-l .tag',h.tag);setT('.hero-l h1',h.name);setT('.hero-l .lead',h.intro);setT('.hero-l .btn.p',h.btn1);setT('.hero-l .btn:not(.p)',h.btn2+' \u2192');setT('.cta',h.btn2+' \u2192');
+ $$('.tl .track span').forEach(function(x,i){if(s.tl[i]!=null)x.textContent=s.tl[i]});
+ var im=$('#imgProfile');if(im&&a.profile)im.setAttribute('src',a.profile);
+ ['work','education','service','contact'].forEach(function(k){var sc=S.sec[k]||{};setT('#'+k+' .tag',sc.tag||'');var e=$('#'+k+' > h2');if(e&&sc.h!=null)e.innerHTML=hl(sc.h)});
+ $('#eduList').innerHTML=S.edu.map(function(x,i){return '<h2'+(i?' style="margin-top:64px"':'')+'>'+hl(x.h||'')+'</h2><div class="edu">'+(x.logo?'<img src="'+esc(x.logo)+'" alt="">':'')+'<div><h3>'+esc(x.deg)+'</h3><div class="uni mono">'+esc(x.inst)+'</div>'+(x.desc?'<p>'+esc(x.desc)+'</p>':'')+'</div></div>'}).join('');
+ $('#svcGrid').innerHTML=S.svc.map(function(x){return '<div class="card"><div class="ico">'+svg(x.icon)+'</div><h3>'+esc(x.t)+'</h3><p>'+esc(x.d)+'</p></div>'}).join('');
+ $('#boxes').innerHTML=S.boxes.filter(function(x){return(x.u||'').trim()}).map(function(x){return '<a class="mailbox" href="'+esc(href(x))+'"'+(x.p=='email'?' data-copy="'+esc(x.u)+'"':' target="_blank" rel="noopener"')+' aria-label="'+esc(NM[x.p]||x.p)+'">'+svg(x.p)+'<span class="mono">'+esc(x.t||x.u)+'</span></a>'}).join('');
+ $('#socials').innerHTML=S.links.filter(function(x){return(x.u||'').trim()}).map(function(x){return '<a href="'+esc(href(x))+'" target="_blank" rel="noopener" aria-label="'+esc(NM[x.p]||x.p)+'">'+svg(x.p)+'<span class="mono">'+esc(NM[x.p]||x.p)+'</span></a>'}).join('');
+ setT('#foot',s.footer);
+ $('#catGrid').innerHTML=S.cats.map(function(c,i){return '<div class="card" data-c="'+i+'" role="button" tabindex="0" aria-label="Open '+esc(c.name)+'" style="cursor:pointer"><div class="thumb mono folder">'+ico(c.type)+'</div><h3>'+esc(c.name)+'</h3><p>'+esc(c.d||'')+'</p></div>'}).join('')}
+try{S=migrate(JSON.parse($('#seed').textContent))}catch(e){}paint();
+fetch('data/content.json?t='+Date.now()).then(function(r){return r.ok?r.json():Promise.reject()}).then(function(j){S=migrate(j);paint()}).catch(function(){});
+var m=$('#cat'),mg=m.querySelector('.gallery'),mv=m.querySelector('.vgrid');
 function openCat(i){var c=S.cats[i];if(!c)return;m.querySelector('h3').textContent=c.name;
  if(c.type=='video'){mg.style.display='none';mv.style.display='grid';mv.innerHTML=c.items.map(vc).join('')}
  else{mv.style.display='none';mg.style.display='grid';mg.innerHTML=c.items.map(function(x){return '<figure tabindex="0"><img loading="lazy" src="'+esc(x.i)+'" alt="Thumbnail"></figure>'}).join('')}
@@ -582,10 +673,15 @@ function closeCat(){m.classList.remove('open');document.body.style.overflow=''}
 $('#catGrid').addEventListener('click',function(e){var c=e.target.closest('[data-c]');if(c)openCat(+c.dataset.c)});
 $('#catGrid').addEventListener('keydown',function(e){var c=e.target.closest('[data-c]');if(c&&(e.key=='Enter'||e.key==' ')){e.preventDefault();openCat(+c.dataset.c)}});
 m.querySelector('.fo-x').addEventListener('click',closeCat);m.addEventListener('click',function(e){if(e.target===m)closeCat()});
+var tt=document.createElement('div'),tm;tt.id='toast';tt.className='mono';document.body.appendChild(tt);
+function toast(x){tt.textContent=x;tt.classList.add('on');clearTimeout(tm);tm=setTimeout(function(){tt.classList.remove('on')},2400)}
+function legacy(v){var x=document.createElement('textarea');x.value=v;x.style.cssText='position:fixed;opacity:0;top:0';document.body.appendChild(x);x.select();var ok=false;try{ok=document.execCommand('copy')}catch(e){}document.body.removeChild(x);return ok}
+$('#boxes').addEventListener('click',function(e){var a=e.target.closest('a[data-copy]');if(!a)return;var v=a.getAttribute('data-copy');
+ if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(v).then(function(){toast('Email copied to clipboard')},function(){toast(legacy(v)?'Email copied to clipboard':v)});else toast(legacy(v)?'Email copied to clipboard':v)});
 var lb=document.createElement('div'),cur=0;lb.id='lb';lb.innerHTML='<span class="x">&times;</span><img alt=""><div class="n mono"></div>';document.body.appendChild(lb);
-var im=lb.querySelector('img'),nn=lb.querySelector('.n');
+var li=lb.querySelector('img'),nn=lb.querySelector('.n');
 function figs(){return $$('#cat .gallery figure')}
-function show(i){var f=figs();cur=(i+f.length)%f.length;im.src=f[cur].querySelector('img').src;nn.textContent=(cur+1)+' / '+f.length+'  \u00b7  \u2190 \u2192 to browse, Esc to close'}
+function show(i){var f=figs();cur=(i+f.length)%f.length;li.src=f[cur].querySelector('img').src;nn.textContent=(cur+1)+' / '+f.length+'  \u00b7  \u2190 \u2192 to browse, Esc to close'}
 document.addEventListener('click',function(e){var f=e.target.closest&&e.target.closest('#cat .gallery figure');if(f){show(figs().indexOf(f));lb.classList.add('open')}});
 lb.addEventListener('click',function(){lb.classList.remove('open')});
 document.addEventListener('keydown',function(){wasLb=lb.classList.contains('open')},true);
