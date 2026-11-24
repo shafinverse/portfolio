@@ -189,6 +189,20 @@
      "i": "uploads/video-edits/04.jpg"
     }
    ]
+  },
+  {
+   "id": "graphic-design-jdj",
+   "name": "Graphic Design",
+   "type": "image",
+   "d": "Here you will find some of banner and posters that I've designed. ",
+   "items": [
+    {
+     "i": "uploads/graphic-design-jdj/1795539527741-4718.jpg"
+    },
+    {
+     "i": "uploads/graphic-design-jdj/1795539536208-4jtg.jpg"
+    }
+   ]
   }
  ]
 }
